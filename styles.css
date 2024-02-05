@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: radial-gradient(circle, #ffd1dc, #ff69b4); /* Radiaal kleuroverloop */
+  font-family: 'Jumble', sans-serif;
+  overflow: hidden;
+}
+
+#fade-in-text {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+#reveal-button {
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  border: none;
+  background-color: #ff69b4; /* iets donkerder roze */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  color: white;
+  cursor: pointer;
+  animation: pulse 1.5s infinite alternate; /* Pulserende animatie */
+}
+
+#reveal-button:hover {
+  background-color: #ff1493; /* nog iets donkerder roze bij hover */
+  animation: none !important; /* Stop de pulserende animatie bij hover */
+}
+
+#next-page-button {
+  display: none; /* Verberg de knop standaard */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+
+/* Voeg stijlen toe voor de slideshow-container en slides */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Voeg stijlen toe voor de vorige en volgende knoppen */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  font-size: 20px;
+  color: white;
+  background-color: #ff69b4; /* Iets donkerder roze */
+  border: none;
+  cursor: pointer;
+}
+
+.prev:hover, .next:hover {
+  background-color: #ff1493; /* Nog iets donkerder roze bij hover */
+}
+
+#question {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#buttons-container {
+  display: flex;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.5s ease;
+  position: relative;
+  z-index: 2; /* Standaard z-index voor beide knoppen */
+
+}
+
+.green-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.green-button:hover {
+  background-color: #45a049;
+  z-index: 2; /* Zorg ervoor dat dit een hogere waarde heeft dan de 'Nee'-knop bij hover */
+}
+
+.red-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.red-button:hover {
+  background-color: #d32f2f;
+}
